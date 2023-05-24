@@ -5,3 +5,10 @@ exports.getHomePage = (req,res) =>{
     res.render('index', {cubes})
 }
 
+exports.aboutPage = (req,res) => {
+    res.render('about')
+}
+
+exports.getErrorPage = (req,res) => {
+    res.render('404')
+}
