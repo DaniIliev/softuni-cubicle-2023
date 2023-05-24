@@ -7,7 +7,7 @@ exports.getAddCubePage = (req, res) => {
 
 exports.postCreateCub = (req, res) => {
 
-    console.log(req.url)
+    console.log(req.body)
     const { name, description, imageUrl, difficultyLevel } = req.body
 
     let cube = new Cube(name, description, imageUrl, difficultyLevel)
