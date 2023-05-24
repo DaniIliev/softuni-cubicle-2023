@@ -4,3 +4,4 @@ exports.getHomePage = (req,res) =>{
     let cubes = db.cubes
     res.render('index', {cubes})
 }
+
