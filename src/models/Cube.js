@@ -27,6 +27,7 @@ const cubeSchema = new mongoose.Schema({
     name: String,
     description: String,
     difficultyLevel: Number,
+    imageUrl: String,
     accessories: [{
         type: mongoose.Types.ObjectId,
         ref: 'Accessory'

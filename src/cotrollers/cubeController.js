@@ -1,6 +1,6 @@
 
 const cubeManager = require('../managers/cubeManager')
-const db = require('../db.json')
+
 
 exports.getAddCubePage = (req, res) => {
     res.render('create')
@@ -19,7 +19,7 @@ exports.getDetailsCube = (req, res) => {
     if (!id) {
         res.redirect('/404')
     }
-    let cube = db.cubes.find(x => x.id == id)
+    // let cube = db.cubes.find(x => x.id == id)
 
     if (!cube) {
         res.redirect('/404')
