@@ -13,14 +13,14 @@ exports.postCreateCub = async (req, res) => {
     res.redirect('/')
 }
 
-exports.getDetailsCube = (req, res) => {
-    let id = Number(req.params.id)
+exports.getDetailsCube = async (req, res) => {
+    let id = req.params.cubeId
+    let cube = await cubeManager.getCubeById(id).lean()
 
     if (!id) {
         res.redirect('/404')
     }
-    // let cube = db.cubes.find(x => x.id == id)
-
+    
     if (!cube) {
         res.redirect('/404')
     }

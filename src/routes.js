@@ -7,7 +7,7 @@ router.get('/', pageController.getHomePage)
 router.get('/create', cubeController.getAddCubePage)
 router.post('/create', cubeController.postCreateCub)
 router.get('/about', pageController.aboutPage)
-router.get('/details/:id', cubeController.getDetailsCube)
+router.get('/details/:cubeId', cubeController.getDetailsCube)
 router.get('/404', pageController.getErrorPage)
 
 module.exports = router

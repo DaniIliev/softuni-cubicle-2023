@@ -23,3 +23,8 @@ exports.getAll = async (search, difficultyLevelFrom, difficultyLevelTo) => {
 
    return cubes
 }
+
+exports.getCubeById = (cubeId) => {
+    let cube = Cube.findById(cubeId)
+    return cube
+}
