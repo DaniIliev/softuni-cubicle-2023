@@ -9,22 +9,29 @@ exports.createCube = (cubeData) => {
 exports.getAll = async (search, difficultyLevelFrom, difficultyLevelTo) => {
     let cubes = await Cube.find().lean()
 
-    if(search){
+    if (search) {
         cubes = cubes.filter(x => x.name.toLowerCase().includes(search.toLowerCase()))
     }
 
-    if(difficultyLevelFrom){
+    if (difficultyLevelFrom) {
         cubes = cubes.filter(x => x.difficultyLevel >= difficultyLevelFrom)
     }
 
-    if(difficultyLevelTo){
+    if (difficultyLevelTo) {
         cubes = cubes.filter(x => x.difficultyLevel <= difficultyLevelTo)
     }
 
-   return cubes
+    return cubes
 }
 
 exports.getCubeById = (cubeId) => {
     let cube = Cube.findById(cubeId)
     return cube
 }
+
+// exports.attachAccessory = async (cubeId, accessoryId) => {
+//     const cube = await Cube.findById(cubeId)
+//     cube.accessories.push(accessoryId)
+
+//     return cube
+// }

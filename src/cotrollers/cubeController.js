@@ -20,10 +20,10 @@ exports.getDetailsCube = async (req, res) => {
     if (!id) {
         res.redirect('/404')
     }
-    
+
     if (!cube) {
         res.redirect('/404')
     }
-
+    
     res.render('details', { cube })
 }

@@ -17,3 +17,11 @@ exports.aboutPage = (req, res) => {
 exports.getErrorPage = (req, res) => {
     res.render('404')
 }
+
+exports.getCreateAccessoryPage = (req,res) =>{
+    res.render('createAccessory')
+}
+
+exports.attachAccessoryPage = (req,res) =>{
+    res.render('attachAccessory')
+}
