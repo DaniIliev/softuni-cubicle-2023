@@ -18,3 +18,14 @@ exports.attachAccessorys = (async (req, res) => {
     
     res.render('attachAccessory', { cube, getAllAccessory })
 })
+
+exports.postAttachAccessory = (async (req,res) => {
+    const cubeID = req.params.cubeId
+    const accessory = req.body.accessory 
+    const cube = await Cube.findById(cubeID)
+
+    cube.accessories.push(accessory)
+    await cube.save()
+
+    res.redirect(`/cubes/details/${cubeID}`)
+})

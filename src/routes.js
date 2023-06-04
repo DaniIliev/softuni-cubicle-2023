@@ -14,5 +14,7 @@ router.get('/accessory-add', pageController.getCreateAccessoryPage)
 router.post('/accessory-add', accessoryController.createAccessory)
 
 router.get('/cubes/attach-accessorry/:cubeId', accessoryController.attachAccessorys)
+router.post('/cubes/attach-accessorry/:cubeId', accessoryController.postAttachAccessory)
+
 
 module.exports = router
