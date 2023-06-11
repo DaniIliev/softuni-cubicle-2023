@@ -26,6 +26,15 @@ exports.getAll = async (search, difficultyLevelFrom, difficultyLevelTo) => {
 
 exports.getCubeById = (cubeId) => {
     let cube = Cube.findById(cubeId)
+
     return cube
+}
+
+exports.deleteCubeById = (cubeId) => {
+    return Cube.findOneAndDelete(cubeId)
+}
+
+exports.editCube = (cubeId, data) => {
+    return Cube.findByIdAndUpdate(cubeId, data)
 }
 

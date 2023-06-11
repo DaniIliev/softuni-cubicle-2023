@@ -2,6 +2,9 @@ const express = require('express')
 const setupViewEngine = require('./config/index')
 const routes = require('./routes')
 const mongoDBConfig = require('./config/dbConfig')
+const service = require('./service/authService')
+const cookieParser = require('cookie-parser')
+
 
 const app = express()
 const port = 3000
@@ -13,6 +16,8 @@ mongoDBConfig()
 
 app.use(express.static('src/public'))
 app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(service.authentication)
 app.use(routes)
 
 

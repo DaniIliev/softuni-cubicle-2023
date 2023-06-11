@@ -5,7 +5,7 @@ const Accessory = require('../models/accessory')
 
 exports.createAccessory = (async (req, res) => {
     const { name, description, imageUrl } = req.body
-    console.log(req.body)
+
     await accessoryManager.create({ name, description, imageUrl })
 
     res.redirect('/')

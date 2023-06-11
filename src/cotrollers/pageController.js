@@ -4,7 +4,6 @@ exports.getHomePage = async (req, res) => {
     const { search, from: difficultyLevelFrom, to: difficultyLevelTo } = req.query
 
     let cubes = await cubeManager.getAll(search, difficultyLevelFrom, difficultyLevelTo);
-    console.log(cubes)
     
     res.render('index', {cubes, search, difficultyLevelFrom, difficultyLevelTo})
 
